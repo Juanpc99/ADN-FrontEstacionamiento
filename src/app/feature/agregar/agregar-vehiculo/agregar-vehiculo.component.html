@@ -1,0 +1,33 @@
+<h2>Agregar vehiculo</h2>
+<hr>
+<div *ngIf="hayError" class="alert alert-danger">
+    {{mensajeError}}
+</div>
+<form class="form-inline" [formGroup]="form" (ngSubmit)="save()">
+    <div class="form-group mx-sm-3">
+        <label for="inputUser" class="sr-only">Placa</label>
+        <input (keyup)="form.patchValue({placa: $event.target.value.toUpperCase()})" type="text" class="form-control" id="inputUser" placeholder="Agregue la placa" formControlName="placa">
+    </div>
+    <div class="form-group mx-sm-3">
+        <label for="inputPass" class="sr-only">Tipo de vehiculo</label>
+        <input type="text" class="form-control" id="inputPass" placeholder="Agregue tipo de vehiculo" formControlName ="tipoVehiculo">
+    </div>
+    <div class="form-group mx-sm-3">
+        <label for="inputPass" class="sr-only">Modelo</label>
+        <input type="text" class="form-control" id="inputPass" placeholder="Agregue modelo de vehiculo" formControlName ="modeloVehiculo">
+    </div>
+    <div class="form-group mx-sm-3">
+        <label for="inputPass" class="sr-only">Nombre Propietario</label>
+        <input type="text" class="form-control" id="inputPass" placeholder="Agregue nombre del propietario" formControlName ="nombrePropietario">
+    </div>
+    <div class="form-group mx-sm-3">
+        <label for="inputPass" class="sr-only">Apellido Propietario</label>
+        <input type="text" class="form-control" id="inputPass" placeholder="Agregue apellido del propietario" formControlName ="apellidoPropietario">
+    </div>
+    <div class="form-group mx-sm-3">
+        <label for="inputPass" class="sr-only">Precio por hora</label>
+        <input type="number" class="form-control" id="inputPass" placeholder="Agregue el precio por hora" formControlName ="precioHora">
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Agregar</button>
+ </form>

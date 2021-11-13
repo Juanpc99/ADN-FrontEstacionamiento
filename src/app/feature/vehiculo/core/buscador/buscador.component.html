@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col">
+        <app-input
+            (onEnter)="buscar($event)"
+            (onDebounce)="sugerencias($event)"
+            placeholder="Buscar vehiculo"    
+        ></app-input>
+    </div>
+</div>
+<hr>
+
+<div *ngIf="hayError" class="alert alert-danger">
+    No se encontro nada en el termino:  {{termino}}
+</div>
+
+<div *ngIf="vehiculos.length > 0" class="row">
+    <div class="col">
+        <app-tabla [vehiculosO]="vehiculos"></app-tabla>
+    </div>
+</div>
+
+<div *ngIf="vehiculos.length === 0 && !hayError" class="row">
+    <div class="col">
+        <app-tabla [vehiculosO]="todosVehiculos"></app-tabla>
+    </div>
+</div>

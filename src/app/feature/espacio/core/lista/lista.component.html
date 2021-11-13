@@ -1,0 +1,32 @@
+
+<div class = "row" *ngIf="(listaEspacios | async)?.length>0">
+    <div *ngFor="let item of listaEspacios |async"
+          class = "col-md-2 col-sm-6">
+      <div class="card">
+        <img 
+          [routerLink]="['/agregar', item.id]"
+          *ngIf="item.estado == 'D' ; else noDisponible"
+          src="assets/espacios/espacio-disponible.jpg" 
+          class="card-img-top"
+          >
+          <div class="card-body">
+            <p class="card-text text-center">
+              {{item.nombre}}
+            </p>
+          </div>
+      </div>
+      <ng-template #noDisponible>
+        <img src="assets/espacios/espacio-ocupado.jpg"
+              class="card-img-top"
+              (click)="actualizar(item.id)"
+              [routerLink]="['/sacar', item.id]"
+        >
+      </ng-template>
+    </div>
+  </div>
+
+  <div *ngIf="(listaEspacios | async)?.length===0" class="alert alert-danger">
+    No se encontro nada en la lista
+</div>
+ 
+  

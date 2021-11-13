@@ -1,0 +1,46 @@
+<h2>Información vehiculo</h2>
+<hr>
+<table class="table">
+    <tbody>
+      <tr>
+        <th>Vehiculo</th>
+        <td>{{vehiculo.placa}}</td>
+      </tr>
+      <tr>
+        <th>Nombre Propietario</th>
+        <td>{{vehiculo.nombrePropietario}}</td>
+      </tr>
+      <tr>
+        <th>Apellido Propietario</th>
+        <td>{{vehiculo.apellidoPropietario}}</td>
+      </tr>
+      <tr>
+        <th>Tipo vehiculo</th>
+        <td>{{vehiculo.tipoVehiculo}}</td>
+      </tr>
+      <tr>
+        <th>Modelo vehiculo</th>
+        <td>{{vehiculo.modeloVehiculo}}</td>
+      </tr>
+      <tr>
+        <th>Hora entrada</th>
+        <td>{{vehiculo.fechaEntrada.substring(11)}}</td>
+      </tr>
+      <tr>
+        <th>Hora salida</th>
+        <td>{{vehiculo.fechaSalida.substring(11)}}</td>
+      </tr>
+      <tr>
+        <th>Precio base hora</th>
+        <td>${{vehiculo.precioBaseHora | number}}</td>
+      </tr>
+      <tr>
+        <th>Total a Pagar</th>
+        <td>${{vehiculo.totalPagar | number}}</td>
+      </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary" (click)="eliminarVehiculo()">Pagar</button> 
+
+
+

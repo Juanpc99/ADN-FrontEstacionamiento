@@ -1,0 +1,8 @@
+<h2 class="textos-responsive">Búsquedas</h2>
+<hr>
+<ul class="list-group" *ngFor="let item of items">
+    <li [routerLink]= "item.url"
+        routerLinkActive="active"
+        class="list-group-item text-center"
+    >{{item.nombre}}</li>
+</ul>
