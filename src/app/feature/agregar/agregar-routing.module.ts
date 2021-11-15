@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AgregarVehiculoComponent } from './agregar-vehiculo/agregar-vehiculo.component';
 
@@ -9,7 +9,7 @@ const routes: Routes = [
         component:AgregarVehiculoComponent
         
     }
-]
+];
 
 
 @NgModule({

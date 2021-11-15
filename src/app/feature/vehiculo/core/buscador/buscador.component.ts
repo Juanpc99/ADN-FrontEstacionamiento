@@ -6,7 +6,6 @@ import { VehiculoService } from '../../shared/service/vehiculo.service';
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
-  styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent{
 

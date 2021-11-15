@@ -5,7 +5,6 @@ import { EspacioService } from '../../shared/service/espacio.service';
 @Component({
   selector: 'app-espacio',
   templateUrl: './espacio.component.html',
-  styleUrls: ['./espacio.component.css']
 })
 export class EspacioComponent implements OnInit {
 

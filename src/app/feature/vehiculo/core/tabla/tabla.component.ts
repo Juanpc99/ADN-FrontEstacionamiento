@@ -5,7 +5,6 @@ import { Vehiculo } from '../../../../shared/models/vehiculo';
 @Component({
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
-  styleUrls: ['./tabla.component.css']
 })
 export class TablaComponent implements OnInit {
   @Input() vehiculosO: Observable<Vehiculo[]>;

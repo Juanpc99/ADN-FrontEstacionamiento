@@ -9,7 +9,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-sacar-vehiculo',
   templateUrl: './sacar-vehiculo.component.html',
-  styleUrls: ['./sacar-vehiculo.component.css']
 })
 export class SacarVehiculoComponent implements OnInit {
   vehiculo: Vehiculo = new Vehiculo('', 0, '', '', '', '', '', '', 0);

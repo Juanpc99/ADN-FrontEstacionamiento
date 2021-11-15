@@ -8,7 +8,6 @@ import { AgregarService } from '../shared/service/agregar-service/agregar.servic
 @Component({
   selector: 'app-agregar-vehiculo',
   templateUrl: './agregar-vehiculo.component.html',
-  styleUrls: ['./agregar-vehiculo.component.css']
 })
 export class AgregarVehiculoComponent implements OnInit {
 

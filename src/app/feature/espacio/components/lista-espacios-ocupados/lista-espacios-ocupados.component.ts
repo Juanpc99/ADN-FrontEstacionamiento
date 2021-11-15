@@ -6,7 +6,6 @@ import { EspacioService } from '../../shared/service/espacio.service';
 @Component({
   selector: 'app-lista-espacios-ocupados',
   templateUrl: './lista-espacios-ocupados.component.html',
-  styleUrls: ['./lista-espacios-ocupados.component.css']
 })
 export class ListaEspaciosOcupadosComponent implements OnInit {
 

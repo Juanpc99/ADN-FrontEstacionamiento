@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-lista-espacios',
   templateUrl: './lista-espacios.component.html',
-  styleUrls: ['./lista-espacios.component.css']
 })
 export class ListaEspaciosComponent implements OnInit {
 
