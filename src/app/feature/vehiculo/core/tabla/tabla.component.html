@@ -1,19 +1,19 @@
-<table class="table table-hover">
+<table class="table table-hover" aria-describedby="tablaVehiculos">
 
     <thead>
         <tr>
-            <th> ID </th>
-            <th> Placa </th>
-            <th> Propietario </th>
-            <th> Total Pagar </th>
+            <th id="Id"> ID </th>
+            <th id="Placa"> Placa </th>
+            <th id="Propietario"> Propietario </th>
+            <th id="TotalPagar"> Total Pagar </th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let vehiculo of vehiculosO">
-            <td>{{vehiculo.id}}</td>
-            <td>{{vehiculo.placa}}</td>
-            <td>{{vehiculo.nombrePropietario}}</td>
-            <td>{{vehiculo.totalPagar | currency}}</td>
+            <td id="dataId">{{vehiculo.id}}</td>
+            <td id="dataPlaca">{{vehiculo.placa}}</td>
+            <td id="dataNombre">{{vehiculo.nombrePropietario}}</td>
+            <td id="dataPagar">{{vehiculo.totalPagar | currency}}</td>
         </tr>
     </tbody>
 </table>
