@@ -39,7 +39,7 @@ pipeline {
 				submoduleCfg: [],
 				userRemoteConfigs: [[
 					credentialsId: 'GitHub_Juanpc99',
-					url:'https://github.com/Juanpc99/ADN-FrontEstacionamiento'
+					url:'https://github.com/Juanpc99/ADN-FrontEstacionamiento.git'
 				]]
 			])
 		}
