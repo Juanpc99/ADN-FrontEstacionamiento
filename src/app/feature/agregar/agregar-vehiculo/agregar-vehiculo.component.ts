@@ -17,7 +17,6 @@ export class AgregarVehiculoComponent implements OnInit {
   fecha: string;
   hayError: boolean = false;
   mensajeError: string;
-
   constructor(
     private activeRoutes: ActivatedRoute, private formBuilder: FormBuilder,
     protected agregarService: AgregarService, private datePipe: DatePipe,
@@ -34,8 +33,9 @@ export class AgregarVehiculoComponent implements OnInit {
   }
 
   buildForm() {
+    const maximoLength: number = 6
     this.form = this.formBuilder.group({
-      placa: [''.toUpperCase(), [Validators.required, Validators.maxLength(6)]],
+      placa: [''.toUpperCase(), [Validators.required, Validators.maxLength(maximoLength)]],
       tipoVehiculo: ['', [Validators.required]],
       modeloVehiculo: ['', [Validators.required]],
       nombrePropietario: ['', [Validators.required]],
@@ -48,17 +48,17 @@ export class AgregarVehiculoComponent implements OnInit {
 
 
   save() {
-    this.hayError =false;
+    this.hayError = false;
     this.fecha = this.datePipe.transform(Date.now().toString(), 'yyy-MM-dd HH:mm:ss');
-    this.vehiculo =new Vehiculo(this.form.value.placa, this.idEspacio, this.form.value.tipoVehiculo,
-    this.form.value.modeloVehiculo, this.form.value.nombrePropietario, this.form.value.apellidoPropietario,
-    this.fecha, this.fecha, this.form.value.precioHora)
+    this.vehiculo = new Vehiculo(this.form.value.placa, this.idEspacio, this.form.value.tipoVehiculo,
+      this.form.value.modeloVehiculo, this.form.value.nombrePropietario, this.form.value.apellidoPropietario,
+      this.fecha, this.fecha, this.form.value.precioHora)
     this.agregarService.agregarCarro(this.vehiculo).subscribe((data) => {
-      if(data.valor != null)
-      console.log(data);
-      this.hayError = false
-      this.router.navigate(['']);
-      },
+      if (data.valor != null){
+        this.hayError = false;
+        this.router.navigate(['']);
+      }
+    },
       (err) => {
         this.hayError = true;
         this.mensajeError = err.error.mensaje;
@@ -66,9 +66,9 @@ export class AgregarVehiculoComponent implements OnInit {
       })
 
 
-    
 
- 
+
+
 
   }
 }

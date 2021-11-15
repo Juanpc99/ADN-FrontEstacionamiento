@@ -26,9 +26,8 @@ export class ListaComponent implements OnInit {
     let vehiculos: Vehiculo = new Vehiculo(vehiculo.placa, vehiculo.idEspacio,
       vehiculo.tipoVehiculo, vehiculo.modeloVehiculo, vehiculo.nombrePropietario,
       vehiculo.apellidoPropietario, vehiculo.fechaEntrada, fechaSalida, vehiculo.precioBaseHora);
-    this.espacioService.actualizarVehiculo(vehiculos, vehiculo.id).subscribe(data =>{
-      console.log(data)
-      this.actualizo =true
+    this.espacioService.actualizarVehiculo(vehiculos, vehiculo.id).subscribe(() =>{
+      this.actualizo =true;
       });
     })
   }
