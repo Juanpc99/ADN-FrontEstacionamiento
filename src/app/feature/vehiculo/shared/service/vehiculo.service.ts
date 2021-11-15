@@ -15,4 +15,5 @@ export class VehiculoService {
     public consultarPorPlaca(placa: string){
         return this.http.doGet<Vehiculo[]>(`${environment.endpoint}/vehiculo/${placa}`, this.http.optsName('consultar vehiculos por placa'));
     }
+    
 }

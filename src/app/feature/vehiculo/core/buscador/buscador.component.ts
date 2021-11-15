@@ -16,7 +16,7 @@ export class BuscadorComponent{
   constructor(private vehiculoService: VehiculoService) {
     this.vehiculoService.consultar().subscribe((vehiculos) => {
       this.todosVehiculos = vehiculos;
-    })
+    });
    }
 
   buscar(termino:string){

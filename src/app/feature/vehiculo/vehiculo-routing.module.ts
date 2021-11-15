@@ -10,7 +10,7 @@ const routes: Routes = [
         component: VehiculoComponent,
 
     }
-]
+];
 
 @NgModule({
     imports: [
@@ -20,4 +20,6 @@ const routes: Routes = [
         RouterModule
     ]
 })
-export class VehiculoRoutingModule{}
+export class VehiculoRoutingModule{
+
+}

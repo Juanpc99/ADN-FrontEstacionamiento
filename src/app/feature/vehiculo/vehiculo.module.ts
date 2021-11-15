@@ -1,5 +1,5 @@
-import { NgModule } from "@angular/core";
-import { VehiculoService } from "./shared/service/vehiculo.service";
+import { NgModule } from '@angular/core';
+import { VehiculoService } from './shared/service/vehiculo.service';
 import { VehiculoRoutingModule } from './vehiculo-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { VehiculoComponent } from './components/vehiculo/vehiculo.component';
@@ -28,4 +28,6 @@ import { RouterModule } from '@angular/router';
         VehiculoService
     ]
 })
-export class VehiculoModule {}
+export class VehiculoModule {
+
+}

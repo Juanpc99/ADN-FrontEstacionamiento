@@ -22,4 +22,5 @@ export class EspacioService {
     public actualizarVehiculo(vehiculo: Vehiculo, id: number){
       return this.http.doPut<Vehiculo, boolean>(`${environment.endpoint}/vehiculo/${id}`, vehiculo);
     }
+    
   }

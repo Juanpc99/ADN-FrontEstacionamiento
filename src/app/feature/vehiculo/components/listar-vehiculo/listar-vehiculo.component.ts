@@ -12,4 +12,5 @@ export class ListarVehiculosComponent implements OnInit{
 
     ngOnInit(){
     }
+    
 }

@@ -16,4 +16,6 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class AgregarRoutingModule{}
+export class AgregarRoutingModule{
+    
+}

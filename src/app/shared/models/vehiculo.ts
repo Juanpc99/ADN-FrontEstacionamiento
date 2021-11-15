@@ -27,4 +27,5 @@ export class Vehiculo{
             this.fechaSalida = fechaSalida;
             this.precioBaseHora = precioBaseHora;
         }
+        
 }
