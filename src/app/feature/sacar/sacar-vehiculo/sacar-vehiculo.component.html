@@ -1,42 +1,42 @@
 <h2>Información vehiculo</h2>
 <hr>
-<table class="table">
+<table class="table" aria-describedby="tablaVehiculosSacar">
     <tbody>
       <tr>
-        <th>Vehiculo</th>
-        <td>{{vehiculo.placa}}</td>
+        <th id="vehiculo">Vehiculo</th>
+        <td id="dataVehiculo">{{vehiculo.placa}}</td>
       </tr>
       <tr>
-        <th>Nombre Propietario</th>
-        <td>{{vehiculo.nombrePropietario}}</td>
+        <th id="nombre">Nombre Propietario</th>
+        <td id="dataNombre">{{vehiculo.nombrePropietario}}</td>
       </tr>
       <tr>
-        <th>Apellido Propietario</th>
-        <td>{{vehiculo.apellidoPropietario}}</td>
+        <th id="apellido">Apellido Propietario</th>
+        <td id="dataApellido">{{vehiculo.apellidoPropietario}}</td>
       </tr>
       <tr>
-        <th>Tipo vehiculo</th>
-        <td>{{vehiculo.tipoVehiculo}}</td>
+        <th id="tipoVehiculo">Tipo vehiculo</th>
+        <td id="dataTipovehiculo">{{vehiculo.tipoVehiculo}}</td>
       </tr>
       <tr>
-        <th>Modelo vehiculo</th>
-        <td>{{vehiculo.modeloVehiculo}}</td>
+        <th id="modeloVehiculo">Modelo vehiculo</th>
+        <td id="dataModeloVehiculo">{{vehiculo.modeloVehiculo}}</td>
       </tr>
       <tr>
-        <th>Hora entrada</th>
-        <td>{{vehiculo.fechaEntrada.substring(11)}}</td>
+        <th id="horaEntrada">Hora entrada</th>
+        <td id="dataHoraEntrada">{{vehiculo.fechaEntrada.substring(11)}}</td>
       </tr>
       <tr>
-        <th>Hora salida</th>
-        <td>{{vehiculo.fechaSalida.substring(11)}}</td>
+        <th id="horaSalida">Hora salida</th>
+        <td id="dataHoraSalida">{{vehiculo.fechaSalida.substring(11)}}</td>
       </tr>
       <tr>
-        <th>Precio base hora</th>
-        <td>${{vehiculo.precioBaseHora | number}}</td>
+        <th id="precio">Precio base hora</th>
+        <td id="dataPrecio">${{vehiculo.precioBaseHora | number}}</td>
       </tr>
       <tr>
-        <th>Total a Pagar</th>
-        <td>${{vehiculo.totalPagar | number}}</td>
+        <th id="pagar">Total a Pagar</th>
+        <td id="dataPagar">${{vehiculo.totalPagar | number}}</td>
       </tr>
     </tbody>
 </table>
