@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 })
 export class ListaComponent implements OnInit {
 
-  @Input() listaEspacios: Observable<Espacio[]>
+  @Input() listaEspacios: Observable<Espacio[]>;
   actualizo: boolean = false;
   constructor(protected espacioService: EspacioService, private datePipe: DatePipe) { }
 
@@ -22,14 +22,14 @@ export class ListaComponent implements OnInit {
   actualizar(id: number){
     this.actualizo = false;
     this.espacioService.buscarPorIdEspacioVehiculo(id).subscribe((vehiculo) => {
-    let fechaSalida = this.datePipe.transform(Date.now().toString(), 'yyy-MM-dd HH:mm:ss');;
+    let fechaSalida = this.datePipe.transform(Date.now().toString(), 'yyy-MM-dd HH:mm:ss');
     let vehiculos: Vehiculo = new Vehiculo(vehiculo.placa, vehiculo.idEspacio,
       vehiculo.tipoVehiculo, vehiculo.modeloVehiculo, vehiculo.nombrePropietario,
       vehiculo.apellidoPropietario, vehiculo.fechaEntrada, fechaSalida, vehiculo.precioBaseHora);
     this.espacioService.actualizarVehiculo(vehiculos, vehiculo.id).subscribe(() =>{
       this.actualizo =true;
       });
-    })
+    });
   }
   
 

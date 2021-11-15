@@ -7,7 +7,7 @@ const routes: Routes = [
         component:SacarVehiculoComponent
         
     }
-]
+];
 
 
 @NgModule({
