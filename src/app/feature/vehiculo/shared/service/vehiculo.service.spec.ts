@@ -21,9 +21,10 @@ describe('VehiculoService', () => {
         service = TestBed.inject(VehiculoService);
 
     });
-    it('should be created', () => {
+    it('should be created', (done) => {
         const vehiculoService: VehiculoService = TestBed.inject(VehiculoService);
         expect(vehiculoService).toBeTruthy;
+        done()
     });
     it('debe buscar por placa', () => {
         const dummyVehiculo = [

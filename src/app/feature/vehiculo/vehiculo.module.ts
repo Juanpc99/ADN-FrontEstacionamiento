@@ -7,6 +7,7 @@ import { ListarVehiculosComponent } from './components/listar-vehiculo/listar-ve
 import { BuscadorComponent } from './core/buscador/buscador.component';
 import { InputComponent } from './core/input/input.component';
 import { TablaComponent } from './core/tabla/tabla.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TablaComponent } from './core/tabla/tabla.component';
     ],
     imports: [
         VehiculoRoutingModule,
-        SharedModule
+        SharedModule,
+        RouterModule
     ],
     providers: [
         VehiculoService
