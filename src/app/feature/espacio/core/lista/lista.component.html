@@ -7,6 +7,7 @@
           [routerLink]="['/agregar', item.id]"
           *ngIf="item.estado == 'D' ; else noDisponible"
           src="assets/espacios/espacio-disponible.jpg" 
+          alt="Vehiculo disponible"
           class="card-img-top"
           >
           <div class="card-body">
@@ -17,6 +18,7 @@
       </div>
       <ng-template #noDisponible>
         <img src="assets/espacios/espacio-ocupado.jpg"
+              alt="Vehiculo no disponible"
               class="card-img-top"
               (click)="actualizar(item.id)"
               [routerLink]="['/sacar', item.id]"
