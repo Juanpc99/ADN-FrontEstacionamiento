@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Vehiculo } from "@shared/models/vehiculo";
+import { Injectable } from '@angular/core';
+import { Vehiculo } from '@shared/models/vehiculo';
 import { environment } from "src/environments/environment";
 import { HttpService } from '../../../../core/services/http.service';
 

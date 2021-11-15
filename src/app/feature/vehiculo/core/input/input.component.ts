@@ -11,22 +11,21 @@ export class InputComponent implements OnInit {
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
   @Output() onDebounce : EventEmitter<string> = new EventEmitter();
 
-  @Input() placeholder: string = '';
+  @Input() placeholder = '';
   debouncer : Subject<string> = new Subject();
-  termino: string = '';
+  termino = '';
   constructor() { 
     
   }
   
   ngOnInit() {
-    const dbtime: number = 300;
+    const dbtime = 300;
     this.debouncer.pipe(
       debounceTime(dbtime)
     ).subscribe(
       valor => {
         this.onDebounce.emit(valor);
-      }
-    )
+      });
   }
   buscar(){
     this.onEnter.emit(this.termino);

@@ -12,7 +12,7 @@ import { DatePipe } from '@angular/common';
 export class ListaComponent implements OnInit {
 
   @Input() listaEspacios: Observable<Espacio[]>;
-  actualizo: boolean = false;
+  actualizo = false;
   constructor(protected espacioService: EspacioService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {

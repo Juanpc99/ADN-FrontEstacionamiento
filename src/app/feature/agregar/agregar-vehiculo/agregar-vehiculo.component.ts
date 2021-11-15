@@ -15,7 +15,7 @@ export class AgregarVehiculoComponent implements OnInit {
   form: FormGroup;
   vehiculo: Vehiculo;
   fecha: string;
-  hayError: boolean = false;
+  hayError = false;
   mensajeError: string;
   constructor(
     private activeRoutes: ActivatedRoute, private formBuilder: FormBuilder,
@@ -33,7 +33,7 @@ export class AgregarVehiculoComponent implements OnInit {
   }
 
   buildForm() {
-    const maximoLength: number = 6;
+    const maximoLength = 6;
     this.form = this.formBuilder.group({
       placa: [''.toUpperCase(), [Validators.required, Validators.maxLength(maximoLength)]],
       tipoVehiculo: ['', [Validators.required]],
@@ -53,11 +53,11 @@ export class AgregarVehiculoComponent implements OnInit {
     this.vehiculo = new Vehiculo(this.form.value.placa, this.idEspacio, this.form.value.tipoVehiculo,
       this.form.value.modeloVehiculo, this.form.value.nombrePropietario, this.form.value.apellidoPropietario,
       this.fecha, this.fecha, this.form.value.precioHora);
-    this.agregarService.agregarCarro(this.vehiculo).subscribe((data) => {
-      if (data.valor != null){
+    this.agregarService.agregarCarro(this.vehiculo).subscribe(() => {
+
         this.hayError = false;
         this.router.navigate(['']);
-      }
+    
     },
       (err) => {
         this.hayError = true;

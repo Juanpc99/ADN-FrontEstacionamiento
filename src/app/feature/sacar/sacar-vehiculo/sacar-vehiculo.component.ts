@@ -13,7 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SacarVehiculoComponent implements OnInit {
   vehiculo: Vehiculo = new Vehiculo('', 0, '', '', '', '', '', '', 0);
   idEspacio: number;
-  hayError: boolean = false;
+  hayError = false;
   constructor(
     private router: Router, protected sacarService: SacarService, private activatedRoute : ActivatedRoute) { 
   }

@@ -9,10 +9,10 @@ import { VehiculoService } from '../../shared/service/vehiculo.service';
 })
 export class BuscadorComponent{
 
-  termino: string = '';
+  termino = '';
   vehiculos: Vehiculo[] = [];
-  todosVehiculos: Vehiculo[] = []
-  hayError: boolean = false;
+  todosVehiculos: Vehiculo[] = [];
+  hayError = false;
   constructor(private vehiculoService: VehiculoService) {
     this.vehiculoService.consultar().subscribe((vehiculos) => {
       this.todosVehiculos = vehiculos;
@@ -21,7 +21,7 @@ export class BuscadorComponent{
 
   buscar(termino:string){
     this.termino = termino;
-    this.hayError = false
+    this.hayError = false;
     this.vehiculoService.consultarPorPlaca(this.termino)
       .subscribe((vehiculos) => {
         this.vehiculos = vehiculos;
