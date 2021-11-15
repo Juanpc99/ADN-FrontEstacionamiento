@@ -57,7 +57,7 @@ export class AgregarVehiculoComponent implements OnInit {
       if (data.valor != null){
         this.hayError = false;
         this.router.navigate(['']);
-      }
+      };
     },
       (err) => {
         this.hayError = true;

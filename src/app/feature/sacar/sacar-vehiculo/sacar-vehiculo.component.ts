@@ -33,14 +33,11 @@ export class SacarVehiculoComponent implements OnInit {
 
   eliminarVehiculo(){
     this.hayError = false;
-    console.log(this.vehiculo.id);
-    this.sacarService.eliminar(this.vehiculo.id).subscribe((a) => {
-      console.log(a);
+    this.sacarService.eliminar(this.vehiculo.id).subscribe(() => {
       this.hayError= false;
       this.router.navigate(['']);
     },
-    (error) => {
-      console.log(error);
+    () => {
       this.hayError= true;
     });
   }
