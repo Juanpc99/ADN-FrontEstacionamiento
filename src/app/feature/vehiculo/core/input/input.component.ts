@@ -14,14 +14,14 @@ export class InputComponent implements OnInit {
   @Input() placeholder: string = '';
   debouncer : Subject<string> = new Subject();
   termino: string = '';
-  dbtime: number = 300;
   constructor() { 
     
   }
-
+  
   ngOnInit() {
+    const dbtime: number = 300;
     this.debouncer.pipe(
-      debounceTime(this.dbtime)
+      debounceTime(dbtime)
     ).subscribe(
       valor => {
         this.onDebounce.emit(valor);
