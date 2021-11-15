@@ -14,12 +14,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SacarVehiculoComponent implements OnInit {
   vehiculo: Vehiculo = new Vehiculo('', 0, '', '', '', '', '', '', 0);
   idEspacio: number;
-
+  hayError: boolean = false;
   constructor(
     private router: Router, protected sacarService: SacarService, private activatedRoute : ActivatedRoute) { 
   }
 
   ngOnInit(): void {
+  
     this.activatedRoute.params.subscribe(params => {
       this.idEspacio = params.id;
     });
@@ -32,13 +33,16 @@ export class SacarVehiculoComponent implements OnInit {
   }
 
   eliminarVehiculo(){
+    this.hayError = false;
     console.log(this.vehiculo.id);
     this.sacarService.eliminar(this.vehiculo.id).subscribe((a) => {
       console.log(a);
+      this.hayError= false;
       this.router.navigate(['']);
     },
     (error) => {
       console.log(error);
+      this.hayError= true;
     });
   }
 

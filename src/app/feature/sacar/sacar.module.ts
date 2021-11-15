@@ -14,7 +14,8 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     CommonModule,
     SacarRoutingModule,
-    SharedModule
+    SharedModule,
+
   ],
   providers: [
     SacarService,

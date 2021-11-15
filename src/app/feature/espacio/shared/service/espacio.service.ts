@@ -20,8 +20,8 @@ export class EspacioService {
       return this.http.doGet<Vehiculo>(`${environment.endpoint}/vehiculo/idEspacio/${id}`);
     }
     public actualizarVehiculo(vehiculo: Vehiculo, id: number){
-      return this.http.doPut<Vehiculo, boolean>(`${environment.endpoint}/vehiculo/${id}`, vehiculo);
-  }
+      return this.http.doPut<Vehiculo, Boolean>(`${environment.endpoint}/vehiculo/${id}`, vehiculo);
+    }
   
    
 }

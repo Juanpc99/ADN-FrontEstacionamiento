@@ -7,10 +7,6 @@ import { HttpService } from '../../../../core/services/http.service';
 export class SacarService{
     constructor(protected http: HttpService){}
 
-    public actualizar(vehiculo: Vehiculo, id: number){
-        return this.http.doPut<Vehiculo, boolean>(`${environment.endpoint}/vehiculo/${id}`, vehiculo);
-    }
-
     public eliminar(id: number){
         return this.http.doDelete<boolean>(`${environment.endpoint}/vehiculo/${id}`);
     }

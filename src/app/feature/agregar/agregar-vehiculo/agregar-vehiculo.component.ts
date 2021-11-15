@@ -52,13 +52,13 @@ export class AgregarVehiculoComponent implements OnInit {
     this.hayError =false;
     this.fecha = this.datePipe.transform(Date.now().toString(), 'yyy-MM-dd HH:mm:ss');
     this.vehiculo =new Vehiculo(this.form.value.placa, this.idEspacio, this.form.value.tipoVehiculo,
-      this.form.value.modeloVehiculo, this.form.value.nombrePropietario, this.form.value.apellidoPropietario,
-      this.fecha, this.fecha, this.form.value.precioHora)
-    this.agregarService.agregarCarro(this.vehiculo).subscribe(data => {
-      if(data){
-        this.hayError = false
-        this.router.navigate(['']);
-      }
+    this.form.value.modeloVehiculo, this.form.value.nombrePropietario, this.form.value.apellidoPropietario,
+    this.fecha, this.fecha, this.form.value.precioHora)
+    this.agregarService.agregarCarro(this.vehiculo).subscribe((data) => {
+      if(data.valor != null)
+      console.log(data);
+      this.hayError = false
+      this.router.navigate(['']);
       },
       (err) => {
         this.hayError = true;

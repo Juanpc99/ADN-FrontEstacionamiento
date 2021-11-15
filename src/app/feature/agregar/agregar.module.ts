@@ -16,7 +16,7 @@ import { AgregarService } from './shared/service/agregar-service/agregar.service
     CommonModule,
     AgregarRoutingModule,
     ReactiveFormsModule,
-    SharedModule,
+    SharedModule
     
   ],
   providers: [

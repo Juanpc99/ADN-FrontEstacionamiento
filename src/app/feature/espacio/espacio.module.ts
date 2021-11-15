@@ -21,7 +21,7 @@ import { DatePipe } from '@angular/common';
   ],
   imports: [
     EspacioRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [
     EspacioService,
