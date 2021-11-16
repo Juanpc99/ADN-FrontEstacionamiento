@@ -14,9 +14,7 @@ export class BuscadorComponent implements OnInit{
   todosVehiculos: Vehiculo[] = [];
   hayError = false;
   constructor(private vehiculoService: VehiculoService) {
-    this.vehiculoService.consultar().subscribe((vehiculos) => {
-      this.todosVehiculos = vehiculos;
-    });
+    
    }
 
   buscar(termino:string){
@@ -31,10 +29,15 @@ export class BuscadorComponent implements OnInit{
       });
   }
   ngOnInit(){
-    
+    this.metodo();
   }
   sugerencias(termino){
     this.termino = termino;
   }
 
+  metodo(){
+    this.vehiculoService.consultar().subscribe((vehiculos) => {
+      this.todosVehiculos = vehiculos;
+    });
+  }
 }
