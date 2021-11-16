@@ -45,8 +45,13 @@ describe('BuscadorComponent', () => {
   });
 
   it('debe buscar vehiculo por placa', () => {
-    component.buscar('A')
+    spy = spyOn(buscarService, 'consultarPorPlaca').and.returnValue(
+        of([new Vehiculo('ASD123', 1, 'Carro', 'Moto', 'carlos', 'restrepo', '2021/10/10 12:15:15', '2021/10/10 12:15:15', 15000)])
+    )
+    component.buscar('A');
+    buscarService.consultarPorPlaca('A')
     expect(component.hayError).toBe(false);
+    expect(spy).toHaveBeenCalled()
   });
 
   it('debe consultar todos los vehiculos', ()=> {
@@ -54,7 +59,8 @@ describe('BuscadorComponent', () => {
     expect(spy).toHaveBeenCalledWith();
   })
   it('sugerencias debe ser igual al termino', () => {
-    expect(component.sugerencias).toBeTruthy;
+    component.sugerencias('hola');
+    expect(component.termino).toEqual('hola');
   });
 });
 
