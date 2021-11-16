@@ -24,5 +24,14 @@ describe('Inputcomponent', () => {
     it('should create', () => {
       expect(component).toBeTruthy();
     });
+    it('debe buscar', () => {
+      spyOn(component.onEnter, 'emit');
+      component.buscar();
+      expect(component.onEnter.emit).toHaveBeenCalled();
+    })
+    it('debe actuar con tecla presionada', () => {
+      spyOn(component.onDebounce, 'next');
+      component.teclaPresionada();
+      expect(component.onDebounce.next);
+    })
   });
-  
