@@ -1,35 +1,43 @@
 
-// import { AppPage } from '../app.po';
-// describe('workspace-project Producto', () => {
-//     let page: AppPage;
-//     let navBar: NavbarPage;
-//     let producto: ProductoPage;
+import { AgregarPage } from '../page/agregar/agregar.po';
+import { BusacarVehiculoPage } from '../page/vehiculos/buscarVehiculos.po';
+import { SidebarPage } from '../page/sidebar/sidebar.po';
+import { SacarVehiculoPage } from '../page/sacar/sacar.po';
+describe('workspace-project Producto', () => {
+    let agregar: AgregarPage;
+    let buscarVehiculos: BusacarVehiculoPage;
+    let sidebar : SidebarPage;
+    let sacar: SacarVehiculoPage;
 
-//     beforeEach(() => {
-//         page = new AppPage();
-//         navBar = new NavbarPage();
-//         producto = new ProductoPage();
-//     });
+    beforeEach(() => {
+        agregar = new AgregarPage();
+        buscarVehiculos = new BusacarVehiculoPage();
+        sidebar = new SidebarPage();
+        sacar = new SacarVehiculoPage();
+    });
 
-//     it('Deberia crear producto', () => {
-//         const ID_PRODUCTO = '001';
-//         const DESCRIPCION_PRODUCTO = 'Producto de pruebas';
+    it('deberia agregar un producto', () =>{
+        agregar.clickBotonEspacioDisponible();
+        agregar.agregarPlaca('ASD599');
+        agregar.agregarTipoVehculo('fdsfsd');
+        agregar.agregarModeloVehiculo('fsdfs');
+        agregar.agregarNombrePropietario('dsfsdf');
+        agregar.agregarApellidoPropietario('sdfsd');
+        agregar.agregarPrecioPorHora(15000);
+        agregar.clickBotonAgregar();
+        expect(agregar.mensaje()).toBe('Agregado');
+    });
+    it('deberia listar vehiculos', () =>{
+        sidebar.clickBotonVehiculo();
+        buscarVehiculos.buscarVehiculo('A');
 
-//         page.navigateTo();
-//         navBar.clickBotonProductos();
-//         producto.clickBotonCrearProductos();
-//         producto.ingresarId(ID_PRODUCTO);
-//         producto.ingresarDescripcion(DESCRIPCION_PRODUCTO);
-
-//         // Adicionamos las validaciones despues de la creación
-//         // expect(<>).toEqual(<>);
-//     });
-
-//     it('Deberia listar productos', () => {
-//         page.navigateTo();
-//         navBar.clickBotonProductos();
-//         producto.clickBotonListarProductos();
-
-//         expect(4).toBe(producto.contarProductos());
-//     });
-// });
+        expect(buscarVehiculos.listarVehiculos()).toBe(3);
+    })
+    it('deberia sacar un vehiculo', () =>{
+    
+        sacar.clickBotonOcupado();
+        sacar.clickBotonPagar();
+        sacar.mensajeElminoCorrectamente();
+        expect(sacar.mensajeElminoCorrectamente()).toBe('Pagó correctamente');
+    })
+});

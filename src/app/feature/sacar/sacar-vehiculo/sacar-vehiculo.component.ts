@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vehiculo } from '@shared/models/vehiculo';
 
 import { SacarService } from '../shared/service/sacar.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -14,8 +14,9 @@ export class SacarVehiculoComponent implements OnInit {
   vehiculo: Vehiculo = new Vehiculo('', 0, '', '', '', '', '', '', 0);
   idEspacio: number;
   hayError = false;
+  elimino = false;
   constructor(
-    private router: Router, protected sacarService: SacarService, private activatedRoute : ActivatedRoute) { 
+     protected sacarService: SacarService, private activatedRoute : ActivatedRoute) { 
   }
 
   ngOnInit(): void {
@@ -33,8 +34,9 @@ export class SacarVehiculoComponent implements OnInit {
 
   eliminarVehiculo(){
     this.hayError = false;
+    this.elimino = false;
     this.sacarService.eliminar(this.vehiculo.id).subscribe(() => {
-      this.router.navigate(['']);
+      this.elimino = true;
     },
     () => {
       this.hayError= true;

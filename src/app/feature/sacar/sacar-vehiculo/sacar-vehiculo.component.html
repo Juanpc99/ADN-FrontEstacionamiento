@@ -1,5 +1,11 @@
 <h2>Información vehiculo</h2>
 <hr>
+<div *ngIf="elimino" class="alert alert-success" id="eliminoCorrectamente">
+  Pagó correctamente
+</div>
+<div *ngIf="hayError" class="alert alert-danger">
+  Este vehiculo ya no existe 
+</div>
 <table class="table" aria-describedby="tablaVehiculosSacar">
     <tbody>
       <tr>
@@ -40,7 +46,7 @@
       </tr>
     </tbody>
 </table>
-<button type="button" class="btn btn-primary" (click)="eliminarVehiculo()">Pagar</button> 
+<button type="button" class="btn btn-primary" (click)="eliminarVehiculo()" id="pagarEstacionamiento">Pagar</button> 
 
 
 

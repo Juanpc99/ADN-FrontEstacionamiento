@@ -1,8 +1,12 @@
 <h2>Agregar vehiculo</h2>
 <hr>
-<div *ngIf="hayError" class="alert alert-danger">
+<div *ngIf="hayError" class="alert alert-danger" id="mensajeError">
     {{mensajeError}}
 </div>
+<div *ngIf="agrego" class = "alert alert-success" id="mensajeAgregado">
+    Agregado
+</div>
+
 <form class="form-inline" [formGroup]="form" (ngSubmit)="save()">
     <div class="form-group mx-sm-3">
         <label for="inputUser" class="sr-only">Placa</label>

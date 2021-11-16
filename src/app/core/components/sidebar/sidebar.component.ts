@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuItem } from '../../modelo/menu-item';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +7,7 @@ import { MenuItem } from '../../modelo/menu-item';
 })
 export class SidebarComponent implements OnInit {
 
-  @Input() items: MenuItem[];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Vehiculo } from '../../../shared/models/vehiculo';
 import { AgregarService } from '../shared/service/agregar-service/agregar.service';
 
@@ -17,10 +17,10 @@ export class AgregarVehiculoComponent implements OnInit {
   fecha: string;
   hayError = false;
   mensajeError: string;
+  agrego = false;
   constructor(
     private activeRoutes: ActivatedRoute, private formBuilder: FormBuilder,
     protected agregarService: AgregarService, private datePipe: DatePipe,
-    private router: Router
   ) {
     this.buildForm();
 
@@ -49,14 +49,14 @@ export class AgregarVehiculoComponent implements OnInit {
 
   save() {
     this.hayError = false;
+    this.agrego = false
     this.fecha = this.datePipe.transform(Date.now().toString(), 'yyy-MM-dd HH:mm:ss');
     this.vehiculo = new Vehiculo(this.form.value.placa, this.idEspacio, this.form.value.tipoVehiculo,
       this.form.value.modeloVehiculo, this.form.value.nombrePropietario, this.form.value.apellidoPropietario,
       this.fecha, this.fecha, this.form.value.precioHora);
     this.agregarService.agregarCarro(this.vehiculo).subscribe(() => {
 
-        this.hayError = false;
-        this.router.navigate(['']);
+        this.agrego=true
     
     },
       (err) => {
