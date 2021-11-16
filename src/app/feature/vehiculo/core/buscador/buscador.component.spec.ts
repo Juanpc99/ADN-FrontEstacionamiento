@@ -53,16 +53,8 @@ describe('BuscadorComponent', () => {
     component.metodo();
     expect(spy).toHaveBeenCalledWith();
   })
-//   it('Registrando producto', () => {
-//     expect(component.productoForm.valid).toBeFalsy();
-//     component.productoForm.controls.id.setValue('001');
-//     component.productoForm.controls.descripcion.setValue('Producto test');
-//     expect(component.productoForm.valid).toBeTruthy();
-
-//     component.cerar();
-
-//     // Aca validamos el resultado esperado al enviar la petición
-//     // TODO adicionar expect
-//   });
+  it('sugerencias debe ser igual al termino', () => {
+    expect(component.sugerencias).toBeTruthy;
+  });
 });
 

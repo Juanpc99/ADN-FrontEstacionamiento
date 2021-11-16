@@ -25,3 +25,4 @@ import { AgregarService } from './shared/service/agregar-service/agregar.service
   ]
 })
 export class AgregarModule { }
+

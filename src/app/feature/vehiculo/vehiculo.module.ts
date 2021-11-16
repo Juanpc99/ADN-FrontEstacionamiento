@@ -28,5 +28,4 @@ import { RouterModule } from '@angular/router';
         VehiculoService
     ]
 })
-export class VehiculoModule {
-}
+export class VehiculoModule {}

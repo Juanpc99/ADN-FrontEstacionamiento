@@ -29,3 +29,4 @@ import { DatePipe } from '@angular/common';
   ]
 })
 export class EspacioModule { }
+
