@@ -6,11 +6,11 @@ import { HttpService } from '../../../../core/services/http.service';
 import { DatePipe } from '@angular/common';
 import { Vehiculo } from '../../../../shared/models/vehiculo';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-
+import { of } from "rxjs";
 describe('ListaComponent', () => {
   let component: ListaComponent;
   let fixture: ComponentFixture<ListaComponent>;
-
+  let  espacioService: EspacioService;
   beforeEach(
     waitForAsync( () => {
       TestBed.configureTestingModule({
@@ -31,6 +31,7 @@ describe('ListaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ListaComponent);
     component = fixture.componentInstance;
+    espacioService = TestBed.inject(EspacioService);
     fixture.detectChanges();
   });
 
@@ -40,7 +41,10 @@ describe('ListaComponent', () => {
   it('actualizar vehiculo', () => {
     let dummyVehiculo = new Vehiculo('ASD123', 1, 'Carro', 'Moto', 'carlos', 'restrepo', '2021/10/10 12:15:15', '2021/10/10 12:15:15', 15000);
 
-    component.actualizar(dummyVehiculo.idEspacio);
-    expect(component.actualizo).toBeFalse();
+    const​ ​spy​ ​=​ ​spyOn​(espacioService,​ ​'buscarPorIdEspacioVehiculo'​)​.​and​.​returnValue​( 
+      ​      ​of​(dummyVehiculo)
+      ​    ​)​;
+    ​component​.actualizar(dummyVehiculo.idEspacio​)​; 
+    ​expect​(​spy​)​.​toHaveBeenCalled​(​);​
   });
 });

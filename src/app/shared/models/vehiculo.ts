@@ -14,7 +14,7 @@ export class Vehiculo{
 
     constructor(placa: string, idEspacio: number, tipoVehiculo: string, modeloVehiculo: string,
         nombrePropietario: string, apellidoPropietario: string, fechaEntrada: string, fechaSalida: string,
-         precioBaseHora: number){
+        precioBaseHora: number){
 
             
             this.placa = placa;

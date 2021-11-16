@@ -6,28 +6,28 @@
 <form class="form-inline" [formGroup]="form" (ngSubmit)="save()">
     <div class="form-group mx-sm-3">
         <label for="inputUser" class="sr-only">Placa</label>
-        <input (keyup)="form.patchValue({placa: $event.target.value.toUpperCase()})" type="text" class="form-control" id="inputUser" placeholder="Agregue la placa" formControlName="placa">
+        <input (keyup)="form.patchValue({placa: $event.target.value.toUpperCase()})" type="text" class="form-control" id="inputPlaca" placeholder="Agregue la placa" formControlName="placa">
     </div>
     <div class="form-group mx-sm-3">
         <label for="inputPass" class="sr-only">Tipo de vehiculo</label>
-        <input type="text" class="form-control" id="inputPass" placeholder="Agregue tipo de vehiculo" formControlName ="tipoVehiculo">
+        <input type="text" class="form-control" id="inputTipoVehiculo" placeholder="Agregue tipo de vehiculo" formControlName ="tipoVehiculo">
     </div>
     <div class="form-group mx-sm-3">
         <label for="inputPass" class="sr-only">Modelo</label>
-        <input type="text" class="form-control" id="inputPass" placeholder="Agregue modelo de vehiculo" formControlName ="modeloVehiculo">
+        <input type="text" class="form-control" id="inputModeloVehiculo" placeholder="Agregue modelo de vehiculo" formControlName ="modeloVehiculo">
     </div>
     <div class="form-group mx-sm-3">
         <label for="inputPass" class="sr-only">Nombre Propietario</label>
-        <input type="text" class="form-control" id="inputPass" placeholder="Agregue nombre del propietario" formControlName ="nombrePropietario">
+        <input type="text" class="form-control" id="inputNombrePropietario" placeholder="Agregue nombre del propietario" formControlName ="nombrePropietario">
     </div>
     <div class="form-group mx-sm-3">
         <label for="inputPass" class="sr-only">Apellido Propietario</label>
-        <input type="text" class="form-control" id="inputPass" placeholder="Agregue apellido del propietario" formControlName ="apellidoPropietario">
+        <input type="text" class="form-control" id="inputApellidoPropietario" placeholder="Agregue apellido del propietario" formControlName ="apellidoPropietario">
     </div>
     <div class="form-group mx-sm-3">
         <label for="inputPass" class="sr-only">Precio por hora</label>
-        <input type="number" class="form-control" id="inputPass" placeholder="Agregue el precio por hora" formControlName ="precioHora">
+        <input type="number" class="form-control" id="inputPrecioPorHora" placeholder="Agregue el precio por hora" formControlName ="precioHora">
     </div>
     <hr>
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Agregar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" id="botonAgregar">Agregar</button>
  </form>

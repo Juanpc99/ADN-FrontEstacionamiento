@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Vehiculo } from '../../../../shared/models/vehiculo';
 import { VehiculoService } from '../../shared/service/vehiculo.service';
@@ -7,7 +7,7 @@ import { VehiculoService } from '../../shared/service/vehiculo.service';
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
 })
-export class BuscadorComponent{
+export class BuscadorComponent implements OnInit{
 
   termino = '';
   vehiculos: Vehiculo[] = [];
@@ -30,7 +30,9 @@ export class BuscadorComponent{
         }
       });
   }
-  
+  ngOnInit(){
+    
+  }
   sugerencias(termino){
     this.termino = termino;
   }

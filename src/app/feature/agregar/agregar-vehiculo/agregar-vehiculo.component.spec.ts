@@ -8,7 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AgregarService } from '../shared/service/agregar-service/agregar.service';
 import { HttpService } from '../../../core/services/http.service';
 import { of } from 'rxjs';
-import { Respuesta } from '../../../shared/models/respuesta';
 
 describe('AgregarVehiculoComponent', () => {
   let component: AgregarVehiculoComponent;
@@ -41,7 +40,7 @@ describe('AgregarVehiculoComponent', () => {
     component = fixture.componentInstance;
     agregarService = TestBed.inject(AgregarService);
     spyOn(agregarService, 'agregarCarro').and.returnValue(
-      of(new Respuesta(48))
+      of(true)
     );
     fixture.detectChanges();
   });

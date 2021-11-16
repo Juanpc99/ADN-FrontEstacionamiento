@@ -7,10 +7,13 @@
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import { BuscadorComponent } from './buscador.component';
 // import { VehiculoService } from '../../shared/service/vehiculo.service';
+// import { of } from 'rxjs';
+// import { Vehiculo } from '../../../../shared/models/vehiculo';
 
 // describe('BuscadorComponent', () => {
 //   let component: BuscadorComponent;
 //   let fixture: ComponentFixture<BuscadorComponent>;
+//   let buscarService: VehiculoService;
 //   beforeEach(waitForAsync(() => {
 //     TestBed.configureTestingModule({
 //       declarations: [ BuscadorComponent ],
@@ -19,7 +22,7 @@
 //         HttpClientModule,
 //         RouterTestingModule,
 //         ReactiveFormsModule,
-//         FormsModule
+//         FormsModule,
 //       ],
 //       providers: [VehiculoService, HttpService],
 //     })
@@ -29,6 +32,10 @@
 //   beforeEach(() => {
 //     fixture = TestBed.createComponent(BuscadorComponent);
 //     component = fixture.componentInstance;
+//     buscarService = TestBed.inject(VehiculoService);
+//     spyOn(buscarService, 'consultar').and.returnValue(
+//         of([new Vehiculo('ASD123', 1, 'Carro', 'Moto', 'carlos', 'restrepo', '2021/10/10 12:15:15', '2021/10/10 12:15:15', 15000)])
+//     )
 //     fixture.detectChanges();
 //   });
 
@@ -54,5 +61,3 @@
 // //   });
 // });
 
-
-//TODO: Falta hacer estas pruebas
