@@ -13,7 +13,7 @@ describe('AgregarVehiculoComponent', () => {
   let component: AgregarVehiculoComponent;
   let fixture: ComponentFixture<AgregarVehiculoComponent>;
   let agregarService: AgregarService;
-
+  let spy;
   beforeEach(waitForAsync(() => {
        TestBed.configureTestingModule({
         declarations: [ 
@@ -39,8 +39,8 @@ describe('AgregarVehiculoComponent', () => {
     fixture = TestBed.createComponent(AgregarVehiculoComponent);
     component = fixture.componentInstance;
     agregarService = TestBed.inject(AgregarService);
-    spyOn(agregarService, 'agregarCarro').and.returnValue(
-      of(true)
+    spy = spyOn(agregarService, 'agregarCarro').and.returnValue(
+      of(false)
     );
     fixture.detectChanges();
   });
@@ -64,5 +64,20 @@ describe('AgregarVehiculoComponent', () => {
     component.save();
     expect(component.hayError).toBeFalse;
     
+  });
+  it('mensaje de erro', () => {
+    component.form.controls.placa.setValue('ASV1233');
+    component.form.controls.tipoVehiculo.setValue('Carro');
+    component.form.controls.modeloVehiculo.setValue('Mazda');
+    component.form.controls.nombrePropietario.setValue('Carlos');
+    component.form.controls.apellidoPropietario.setValue('Rojas');
+    component.form.controls.precioHora.setValue(15000);
+    expect(component.form.valid).toBeFalsy();
+
+  
+    component.save();
+
+    expect(component.hayError).toBeTrue;
+    expect(spy).toHaveBeenCalled();
   });
 });
