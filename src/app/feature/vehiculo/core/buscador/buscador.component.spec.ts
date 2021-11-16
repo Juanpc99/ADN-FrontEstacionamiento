@@ -45,7 +45,7 @@ describe('BuscadorComponent', () => {
   });
 
   it('debe buscar vehiculo por placa', () => {
-    component.buscar('AS')
+    component.buscar('A')
     expect(component.hayError).toBe(false);
   });
 
