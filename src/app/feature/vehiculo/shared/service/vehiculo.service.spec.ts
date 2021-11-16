@@ -8,7 +8,7 @@ describe('VehiculoService', () => {
     let httpMock: HttpTestingController;
     let service: VehiculoService;
 
-    const apiVehiculoCaonsultarPorPlaca = `${environment.endpoint}/vehiculo/A`
+    const apiVehiculoCaonsultarPorPlaca = `${environment.endpoint}/vehiculo/A`;
     const apiVehiculoConsultarTodo = `${environment.endpoint}/vehiculo`;
     beforeEach(() => {
         const injector = TestBed.configureTestingModule({
@@ -40,8 +40,7 @@ describe('VehiculoService', () => {
         expect(req.request.method).toBe('GET');
         req.flush(dummyVehiculo);
     });
-
-    it('debe consultar todos los vehiculos', () =>{
+    it('debe consultar todos los vehiculos', () => {
         const dummyvehiculos = [
             new Vehiculo('ASD123', 1, 'Carro', 'Moto', 'carlos', 'restrepo', '2021/10/10 12:15:15', '2021/10/10 12:15:15', 15000),
             new Vehiculo('ASD124', 1, 'Carro', 'Moto', 'carlos', 'restrepo', '2021/10/10 12:15:15', '2021/10/10 12:15:15', 15000),
@@ -57,5 +56,4 @@ describe('VehiculoService', () => {
         expect(req.request.method).toBe('GET');
         req.flush(dummyvehiculos);
     });
-
 });

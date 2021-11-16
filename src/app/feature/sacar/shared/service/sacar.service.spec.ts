@@ -5,12 +5,12 @@ import { HttpService } from '../../../../core/services/http.service';
 import { environment } from 'src/environments/environment';
 import { Vehiculo } from '../../../../shared/models/vehiculo';
 import { HttpResponse } from '@angular/common/http';
-describe('SacarService', () =>{
+describe('SacarService', () => {
     let httpMock: HttpTestingController;
-    let service : SacarService;
+    let service: SacarService;
 
-    const apiSacarBuscarVehiculoPorIdEspacio = `${environment.endpoint}/vehiculo/idEspacio/1`
-    const apiSacarEliminarVehiculo = `${environment.endpoint}/vehiculo/1`
+    const apiSacarBuscarVehiculoPorIdEspacio = `${environment.endpoint}/vehiculo/idEspacio/1`;
+    const apiSacarEliminarVehiculo = `${environment.endpoint}/vehiculo/1`;
     beforeEach(() =>{
         const injector = TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],

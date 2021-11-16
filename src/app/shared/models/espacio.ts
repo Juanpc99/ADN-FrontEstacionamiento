@@ -8,5 +8,4 @@ export class Espacio{
         this.nombre = nombre;
         this.estado = estado;
     }
-    
 }

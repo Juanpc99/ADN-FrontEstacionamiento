@@ -13,10 +13,8 @@ export class Vehiculo{
 
 
     constructor(placa: string, idEspacio: number, tipoVehiculo: string, modeloVehiculo: string,
-        nombrePropietario: string, apellidoPropietario: string, fechaEntrada: string, fechaSalida: string,
-        precioBaseHora: number){
-
-            
+                nombrePropietario: string, apellidoPropietario: string, fechaEntrada: string, fechaSalida: string,
+                precioBaseHora: number){
             this.placa = placa;
             this.idEspacio = idEspacio;
             this.tipoVehiculo = tipoVehiculo;
@@ -27,5 +25,4 @@ export class Vehiculo{
             this.fechaSalida = fechaSalida;
             this.precioBaseHora = precioBaseHora;
         }
-        
 }

@@ -33,5 +33,5 @@ export class InputComponent implements OnInit {
   teclaPresionada(){
     this.debouncer.next(this.termino);
   }
-
 }
+

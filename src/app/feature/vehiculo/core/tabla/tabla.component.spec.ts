@@ -5,14 +5,12 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
 import { TablaComponent } from './tabla.component';
 describe('TablaComponent', () => {
     let component: TablaComponent;
-    let fixture: ComponentFixture<TablaComponent>;
-  
+    let fixture: ComponentFixture<TablaComponent>;  
     beforeEach(waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [ TablaComponent ],
-        providers:[VehiculoService, HttpService, HttpClient, HttpHandler]
-      })
-      .compileComponents();
+        providers:[ VehiculoService, HttpService, HttpClient, HttpHandler ]
+      }).compileComponents();
     }));
   
     beforeEach(() => {
